@@ -29,7 +29,7 @@ query = st.text_input("Ask a question about the code:")
 
 if query:
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=gemini_api)
-    vectorstore = PineconeVectorStore(index_name="your-pinecone-index", embedding=embeddings, pinecone_api_key=pinecone_api)
+    vectorstore = PineconeVectorStore(index_name="my-first-index", embedding=embeddings, pinecone_api_key=pinecone_api)
     
     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=gemini_api)
     qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever())
