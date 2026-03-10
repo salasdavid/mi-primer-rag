@@ -1,5 +1,6 @@
 langchain
+langchain-community
 langchain-google-genai
 langchain-pinecone
-langchain-community
+langchain-text-splitters
 streamlit
