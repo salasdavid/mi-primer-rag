@@ -28,14 +28,18 @@ st.title("🤖 My RAG on GitHub")
 query = st.text_input("Ask a question about the code:")
 
 if query:
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004", google_api_key=gemini_api)
     try:
+        # 4 espacios aquí
+        embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004", google_api_key=gemini_api)
         test_vec = embeddings.embed_query("Prueba")
     except Exception as e:
-    st.error(f"Error real de Google: {e}")
+        # 8 espacios aquí (porque está dentro del if y del except)
+        st.error(f"Error real de Google: {e}")
     
-    vectorstore = PineconeVectorStore(index_name="my-first-index", embedding=embeddings, pinecone_api_key=pinecone_api)
-    
+    # Asegúrate de que el resto del código siga alineado con el 'try'
+    vectorstore = PineconeVectorStore(index_name="tu-indice", embedding=embeddings)
+    # ... resto de tu código
+   
     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=gemini_api)
     qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever())
     
