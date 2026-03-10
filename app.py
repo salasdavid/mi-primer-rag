@@ -6,7 +6,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.chains import RetrievalQA
 
 # 1. API Keys configuration (Streamlit will handle them)
-gemini_api = st.secrets["AIzaSyAITL_W48I0PAfgRB_tsa_kKTnxIsQTp5k"]
+gemini_api = st.secrets["GOOGLE_API_KEY"]
 pinecone_api = st.secrets["PINECONE_API_KEY"]
 
 # 2. Load and Process (Example with a GitHub repo)
