@@ -28,10 +28,10 @@ st.title("🤖 My RAG on GitHub")
 query = st.text_input("Ask a question about the code:")
 
 if query:
-embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004", google_api_key=gemini_api)
-try:
-    test_vec = embeddings.embed_query("Prueba")
-except Exception as e:
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004", google_api_key=gemini_api)
+    try:
+        test_vec = embeddings.embed_query("Prueba")
+    except Exception as e:
     st.error(f"Error real de Google: {e}")
     
     vectorstore = PineconeVectorStore(index_name="my-first-index", embedding=embeddings, pinecone_api_key=pinecone_api)
