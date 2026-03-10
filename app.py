@@ -16,8 +16,8 @@ def ingest_data():
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
     docs = splitter.create_documents([text])
     
-    # 3. Save to Pinecone
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=gemini_api)
+    embeddings = GoogleGenerativeAIEmbeddings(model="text-embedding-004", google_api_key=gemini_api)
+
     vectorstore = PineconeVectorStore.from_documents(
         docs, embeddings, index_name="your-pinecone-index", pinecone_api_key=pinecone_api
     )
