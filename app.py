@@ -3,7 +3,7 @@ from langchain_community.document_loaders import GithubFileLoader
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 from langchain_pinecone import PineconeVectorStore
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain.chains.retrieval_qa.base import RetrievalQA
+from langchain.chains import RetrievalQA
 
 # 1. API Keys configuration (Streamlit will handle them)
 gemini_api = st.secrets["GEMINI_API_KEY"]
