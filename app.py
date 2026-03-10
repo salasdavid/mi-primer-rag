@@ -28,7 +28,10 @@ st.title("🤖 My RAG on GitHub")
 query = st.text_input("Ask a question about the code:")
 
 if query:
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=gemini_api)
+embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/text-embedding-004", 
+    google_api_key=gemini_api
+)
     vectorstore = PineconeVectorStore(index_name="my-first-index", embedding=embeddings, pinecone_api_key=pinecone_api)
     
     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=gemini_api)
