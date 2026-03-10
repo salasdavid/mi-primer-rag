@@ -12,7 +12,7 @@ pinecone_api = st.secrets["PINECONE_API_KEY"]
 # 2. Load and Process (Example with a GitHub repo)
 def ingest_data():
     # For this example, load simple text; can use GitHub loaders
-    text = "Here goes the content of your repository or files..."
+    text = "este repositorio es una libreria que ayuda a hacer operaciones aritmeticas"
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
     docs = splitter.create_documents([text])
     
