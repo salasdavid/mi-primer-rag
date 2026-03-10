@@ -19,7 +19,7 @@ def ingest_data():
     embeddings = GoogleGenerativeAIEmbeddings(model="text-embedding-004", google_api_key=gemini_api)
     
     vectorstore = PineconeVectorStore.from_documents(
-        docs, embeddings, index_name="your-pinecone-index", pinecone_api_key=pinecone_api
+        docs, embeddings, index_name="my-first-index", pinecone_api_key=pinecone_api
     )
     return vectorstore
 
